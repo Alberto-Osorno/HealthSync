@@ -1,20 +1,20 @@
-package Estructuras;
+package Estructuras.Listas;
 
 public class Nodo {
-    private Nodo siguiente;
-    private Object dato;
+    protected Object dato;
+    protected Nodo siguiente;
 
     //Constructores
     public Nodo(){}
 
     public Nodo(Object dato){
-        this.siguiente = null;
         this.dato = dato;
+        this.siguiente = null;
     }
 
-    public Nodo(Nodo siguiente, Object dato){
-        this.siguiente = siguiente;
+    public Nodo(Object dato, Nodo siguiente){
         this.dato = dato;
+        this.siguiente = siguiente;
     }
 
     //Getters y Setters
