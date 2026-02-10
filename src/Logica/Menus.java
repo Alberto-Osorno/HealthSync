@@ -18,7 +18,7 @@ public class Menus {
             opcion = scan.nextLine();
             switch (opcion) {
                 case "1":
-                    //Aca va el metodo que se haga cargo de eso
+                    Triage.registrarPaciente();
                     break;
 
                 case "2":
