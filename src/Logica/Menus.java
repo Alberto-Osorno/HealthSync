@@ -1,24 +1,29 @@
 package Logica;
 
+import Estructuras.Colas.Cola;
+import Estructuras.Pilas.Pila;
+
 import java.util.Scanner;
 
 public class Menus {
-    public static void triage(){
+    public static void triage(Cola colaPacientes){
         Scanner scan = new Scanner(System.in);
         String opcion;
         do{
             System.out.println("--- GESTIÓN DE TRIAJE ---");
-            System.out.println("Estado: " + "Aca va el numero de pacientes" + " Pacientes esperando.\n");
+            System.out.println("Estado: " + colaPacientes.size() + " Pacientes esperando.\n");
             System.out.println("[1] Registrar llegada de paciente");
             System.out.println("[2] Llamar a consulta/valoración");
             System.out.println("[3] Ver quién es el siguiente en turno");
             System.out.println("[4] Listar todo los pacientes en espera");
             System.out.println("[5] Volver al Menú Principal");
-
+            System.out.print("\n> Seleccion: ");
             opcion = scan.nextLine();
+            System.out.println();
+
             switch (opcion) {
                 case "1":
-                    Triage.registrarPaciente();
+                    Triage.registrarPaciente(colaPacientes);
                     break;
 
                 case "2":
@@ -42,7 +47,7 @@ public class Menus {
         }while (!opcion.equals("5"));
     }
 
-    public static void farmacia(){
+    public static void farmacia(Pila pilaAnalgesicos, Pila pilaAntibioticos, Pila pilaSueros){
         Scanner scan = new Scanner(System.in);
         String opcion;
         do{

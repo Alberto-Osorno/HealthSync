@@ -1,10 +1,17 @@
 package Logica;
 
+import Estructuras.Colas.Cola;
+import Estructuras.Pilas.Pila;
+
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
+        Cola colaPacientes = new Cola();
+        Pila pilaAnalgesicos = new Pila();
+        Pila pilaAntibioticos = new Pila();
+        Pila pilaSueros = new Pila();
         String modulo;
 
         do{
@@ -16,16 +23,17 @@ public class Main {
             System.out.println("[4] QUIRÓFANOS");
             System.out.println("[5] REPORTE DE ESTADO GLOBAL");
             System.out.println("[6] SALIR");
-
+            System.out.print("\n> Seleccion: ");
             modulo = scan.nextLine();
+            System.out.println();
 
             switch (modulo){
                 case "1":
-                    Menus.triage();
+                    Menus.triage(colaPacientes);
                     break;
 
                 case "2":
-                    Menus.farmacia();
+                    Menus.farmacia(pilaAnalgesicos, pilaAntibioticos, pilaSueros);
                     break;
 
                 case "3":
@@ -44,7 +52,7 @@ public class Main {
                     break;
 
                 default:
-                    System.out.println("OPCIÓN INVALIDA, INTENTE DE NUEVO");
+                    System.out.println("OPCIÓN INVALIDA, INTENTE DE NUEVO\n");
             }
 
         } while(!modulo.equals("6"));
