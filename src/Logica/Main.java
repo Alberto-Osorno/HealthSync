@@ -19,6 +19,7 @@ public class Main {
         do{
             System.out.println();
             System.out.println("  HEALTHSYNC - SISTEMA HOSPITALARIO DE EMERGENCIAS  ");
+            System.out.println();
             System.out.println("====================================================");
             System.out.println("[1] TRIAGE");
             System.out.println("[2] FARMACIA");
@@ -47,6 +48,7 @@ public class Main {
                     break;
 
                 case "5":
+                    Reporte.imprimirDatos(colaPacientes, pilaAnalgesicos, pilaAntibioticos, pilaSueros);
                     break;
 
                 case "6":
