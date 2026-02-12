@@ -42,7 +42,7 @@ public class Menus {
                     break;
 
                 default:
-                    System.out.println("Opción invalida, intente de nuevo\n");
+                    System.out.println("> [Sistema]: Opción invalida, intente de nuevo.");
             }
         }while (!opcion.equals("5"));
     }
@@ -89,42 +89,48 @@ public class Menus {
     }
 
     public static void expedientes(Paciente pacienteEnConsulta){
-        Scanner scan = new Scanner(System.in);
-        String opcion;
-        do{
-            System.out.println("--- EXPEDIENTE MÉDICO: [ " +  "Aca va el nombre del paciente" + " ] ---");
-            System.out.println("ID: #" + "Aca va el numero de paciente que es" + " - Ingreso: " + "Aca va la fecha\n");
-            System.out.println("[1] Agregar nuevo diagnóstico/síntoma");
-            System.out.println("[2] Buscar diagnostico en el historial");
-            System.out.println("[3] Calcular total de cargos médicos");
-            System.out.println("[4] Mostrar historial completo");
-            System.out.println("[5] Finalizar consulta y regresar");
+        if (pacienteEnConsulta != null){
+            Scanner scan = new Scanner(System.in);
+            String opcion;
+            do{
+                System.out.println();
+                System.out.println("--- EXPEDIENTE MÉDICO: [ " +  pacienteEnConsulta.getNombre().toUpperCase() + " ] ---");
+                System.out.println("ID: #" + pacienteEnConsulta.getID() + " - Ingreso: " + "Aca va la fecha\n");
+                System.out.println("[1] Agregar nuevo diagnóstico/síntoma");
+                System.out.println("[2] Buscar diagnostico en el historial");
+                System.out.println("[3] Calcular total de cargos médicos");
+                System.out.println("[4] Mostrar historial completo");
+                System.out.println("[5] Finalizar consulta y regresar");
+                System.out.print("\n> Selección: ");
+                opcion = scan.nextLine();
 
-            opcion = scan.nextLine();
-            switch (opcion) {
-                case "1":
-                    //Aca va el metodo que se haga cargo de eso
-                    break;
+                switch (opcion) {
+                    case "1":
+                        Expedientes.agregarDiagnostico(pacienteEnConsulta.getExpediente());
+                        break;
 
-                case "2":
-                    //Aca va el metodo que se haga cargo de eso
-                    break;
+                    case "2":
+                        Expedientes.buscarDiagnostico(pacienteEnConsulta.getExpediente());
+                        break;
 
-                case "3":
-                    //Aca va el metodo que se haga cargo de eso
-                    break;
+                    case "3":
+                        Expedientes.calcularTotal(pacienteEnConsulta.getExpediente());
+                        break;
 
-                case "4":
-                    //Aca va el metodo que se haga cargo de eso
-                    break;
+                    case "4":
+                        Expedientes.mostrarHistorial(pacienteEnConsulta.getExpediente());
+                        break;
 
-                case "5":
-                    break;
+                    case "5":
+                        break;
 
-                default:
-                    System.out.println("Opción invalida, intente de nuevo");
-            }
-        }while (!opcion.equals("5"));
+                    default:
+                        System.out.println("> [Sistema]: Opción invalida, intente de nuevo.");
+                }
+            }while (!opcion.equals("5"));
+        } else {
+            System.out.println("> [Sistema]: No hay ningún paciente en consulta.");
+        }
     }
 
     public static void quirofanos(){
