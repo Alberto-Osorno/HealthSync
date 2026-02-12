@@ -3,7 +3,7 @@ package Logica;
 import Estructuras.Colas.Cola;
 import Estructuras.Listas.ListaSimple;
 
-public class Paciente extends Cola {
+public class Paciente{
     protected String nombre;
     protected int ID;
     protected int gravedad;
