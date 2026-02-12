@@ -5,6 +5,8 @@ import Estructuras.Listas.Nodo;
 
 import java.util.Scanner;
 
+import static Logica.Triage.pacienteEnConsulta;
+
 public class Expedientes {
     protected static int contadorDeDiagnosticosRegistrados = 0;
 
@@ -48,7 +50,9 @@ public class Expedientes {
         }
 
         if(diagnosticoEncontrado){
+            Diagnostico auxiliar = (Diagnostico) actual.getDato();
             System.out.println(" >> [Sistema]: El diagnostico fue encontrado.");
+            System.out.println(" >> [Sistema]: El cargo del dianostico fue de $" + auxiliar.getPrecio());
         } else {
             System.out.println(" >> [Sistema]: El diagnostico no fue encontrado.");
         }
@@ -68,12 +72,17 @@ public class Expedientes {
     }
 
     public static void mostrarHistorial(ListaSimple expediente){
-        Nodo actual = expediente.getInicio();
+        if (!expediente.vacio()){
+            Nodo actual = expediente.getInicio();
 
-        while (actual != null){
-            Diagnostico auxiliar = (Diagnostico) actual.getDato();
-            System.out.println(" >> " + auxiliar.getDescripcion() + " - $" + auxiliar.getPrecio());
-            actual = actual.getSiguiente();
+            System.out.println(" >> [Sistema]: Expediente de " + pacienteEnConsulta.getNombre());
+            while (actual != null){
+                Diagnostico auxiliar = (Diagnostico) actual.getDato();
+                System.out.println(" >> " + auxiliar.getDescripcion() + " - $" + auxiliar.getPrecio());
+                actual = actual.getSiguiente();
+            }
+        } else {
+            System.out.println(" >> [Sistema]: El expediente está vacío.");
         }
     }
 

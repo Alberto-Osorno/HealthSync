@@ -53,8 +53,8 @@ public class Menus {
         do{
             System.out.println();
             System.out.println("--- INVENTARIO DE FARMACIA ---");
-            System.out.print("[Pila Analgesicos: " + pilaAnalgesicos.size() + " ] | ");
-            System.out.print("[Pila Antibioticos: " + pilaAntibioticos.size() + " ] | ");
+            System.out.print("[Pila Analgésicos: " + pilaAnalgesicos.size() + " ] | ");
+            System.out.print("[Pila Antibióticos: " + pilaAntibioticos.size() + " ] | ");
             System.out.print("[Pila Sueros: " + pilaSueros.size() + " ]\n\n");
             System.out.println("[1] Abastecer medicamento");
             System.out.println("[2] Despachar medicamento de la cima");
@@ -172,11 +172,12 @@ public class Menus {
     public static void expedientes(Paciente pacienteEnConsulta){
         if (pacienteEnConsulta != null){
             Scanner scan = new Scanner(System.in);
+            String ID = String.format("%04d", pacienteEnConsulta.getID());
             String opcion;
             do{
                 System.out.println();
                 System.out.println("--- EXPEDIENTE MÉDICO: [ " +  pacienteEnConsulta.getNombre().toUpperCase() + " ] ---");
-                System.out.println("ID: #" + pacienteEnConsulta.getID() + " - Ingreso: " + "Aca va la fecha\n");
+                System.out.println("ID: #" + ID + " - Ingreso: " + "Aca va la fecha\n");
                 System.out.println("[1] Agregar nuevo diagnóstico/síntoma");
                 System.out.println("[2] Buscar diagnostico en el historial");
                 System.out.println("[3] Calcular total de cargos médicos");
