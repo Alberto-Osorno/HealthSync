@@ -21,10 +21,10 @@ public class Pila implements Stack{
     @Override
     public Object pop() {
         if (lista.vacio()){
-            System.out.println("Pila vacia");
             return null;
         } else {
-            return lista.getInicio().getDato();
+            cont--;
+            return lista.eliminarInicio();
         }
     }
 

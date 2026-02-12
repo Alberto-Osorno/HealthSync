@@ -19,7 +19,7 @@ public class Reporte {
         System.out.println();
         System.out.println("TRIAJE:");
         System.out.println(" *Pacientes en espera: " + colaPacientes.size() + ".");
-        System.out.println(" *Tiempo estimado de espera: " + colaPacientes.size()*(20) + " minutos.");
+        System.out.println(" *Tiempo estimado de espera: " + colaPacientes.size()*(3) + " minutos.");
         System.out.println();
         System.out.println("FARMACIA:");
 
@@ -33,7 +33,7 @@ public class Reporte {
 
         System.out.println();
         System.out.println("PACIENTES ACTIVOS:");
-        System.out.println(" *Total de diagnosticos registrados hoy: " + contadorDeDiagnosticosRegistrados + ".");
+        System.out.println(" *Total de diagnósticos registrados hoy: " + contadorDeDiagnosticosRegistrados + ".");
         System.out.println(" *Paciente #" + "Aca va el ID del paciente" + " en etapa: " + "Aca va la etapa" + ".");
         System.out.println();
         System.out.println("Presione ENTER para continuar...");

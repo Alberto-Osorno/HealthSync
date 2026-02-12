@@ -53,7 +53,9 @@ public class Menus {
         do{
             System.out.println();
             System.out.println("--- INVENTARIO DE FARMACIA ---");
-            System.out.println("Aca hay que imprimir el size de las tres pilas" + "\n");
+            System.out.print("[Pila Analgesicos: " + pilaAnalgesicos.size() + " ] | ");
+            System.out.print("[Pila Antibioticos: " + pilaAntibioticos.size() + " ] | ");
+            System.out.print("[Pila Sueros: " + pilaSueros.size() + " ]\n\n");
             System.out.println("[1] Abastecer medicamento");
             System.out.println("[2] Despachar medicamento de la cima");
             System.out.println("[3] EXTRAER ESPECÍFICO");
@@ -62,17 +64,96 @@ public class Menus {
             System.out.print("\n> Selección: ");
             opcion = scan.nextLine();
 
+            String pilaSeleccionada;
             switch (opcion) {
                 case "1":
-                    //Aca va el metodo que se haga cargo de eso
+                    do {
+                        System.out.println();
+                        System.out.println(" >> [Sistema]: ¿Que pila quiere abastecer?");
+                        System.out.println(" >> [1] Analgésicos");
+                        System.out.println(" >> [2] Antibióticos");
+                        System.out.println(" >> [3] Sueros");
+                        System.out.println(" >> [4] Cancelar");
+                        System.out.print("\n >> Selección: ");
+                        pilaSeleccionada = scan.nextLine();
+
+                        switch (pilaSeleccionada){
+                            case "1":
+                                Farmacia.abastecerPila(pilaAnalgesicos);
+                                break;
+                            case "2":
+                                Farmacia.abastecerPila(pilaAntibioticos);
+                                break;
+                            case "3":
+                                Farmacia.abastecerPila(pilaSueros);
+                                break;
+                            case "4":
+                                break;
+                            default:
+                                System.out.println(" >> [Sistema]: Opción invalida, intente de nuevo.");
+                        }
+                    }while (!(pilaSeleccionada.equals("1") || pilaSeleccionada.equals("2") || pilaSeleccionada.equals("3")));
+
                     break;
 
                 case "2":
-                    //Aca va el metodo que se haga cargo de eso
+                    do {
+                        System.out.println();
+                        System.out.println(" >> [Sistema]: ¿De que pila quiere despachar?");
+                        System.out.println(" >> [1] Analgésicos");
+                        System.out.println(" >> [2] Antibióticos");
+                        System.out.println(" >> [3] Sueros");
+                        System.out.println(" >> [4] Cancelar");
+                        System.out.print("\n >> Selección: ");
+                        pilaSeleccionada = scan.nextLine();
+
+                        switch (pilaSeleccionada){
+                            case "1":
+                                Farmacia.despacharMedicamento(pilaAnalgesicos);
+                                break;
+                            case "2":
+                                Farmacia.despacharMedicamento(pilaAntibioticos);
+                                break;
+                            case "3":
+                                Farmacia.despacharMedicamento(pilaSueros);
+                                break;
+                            case "4":
+                                break;
+                            default:
+                                System.out.println(" >> [Sistema]: Opción invalida, intente de nuevo.");
+                        }
+                    }while (!(pilaSeleccionada.equals("1") || pilaSeleccionada.equals("2") || pilaSeleccionada.equals("3")));
+
                     break;
 
                 case "3":
-                    //Aca va el metodo que se haga cargo de eso
+                    do {
+                        System.out.println();
+                        System.out.println(" >> [Sistema]: ¿De que pila quiere extraer?");
+                        System.out.println(" >> [1] Analgésicos");
+                        System.out.println(" >> [2] Antibióticos");
+                        System.out.println(" >> [3] Sueros");
+                        System.out.println(" >> [4] Cancelar");
+                        System.out.print("\n >> Selección: ");
+                        pilaSeleccionada = scan.nextLine();
+
+                        switch (pilaSeleccionada){
+                            case "1":
+                                Farmacia.extraerEspecifico(pilaAnalgesicos);
+                                break;
+                            case "2":
+                                Farmacia.extraerEspecifico(pilaAntibioticos);
+                                break;
+                            case "3":
+                                Farmacia.extraerEspecifico(pilaSueros);
+                                break;
+                            case "4":
+                                break;
+                            default:
+                                System.out.println(" >> [Sistema]: Opción invalida, intente de nuevo.");
+                        }
+                    }while (!(pilaSeleccionada.equals("1") || pilaSeleccionada.equals("2") || pilaSeleccionada.equals("3")));
+
                     break;
 
                 case "4":

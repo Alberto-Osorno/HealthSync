@@ -6,11 +6,11 @@ import java.util.Scanner;
 
 public class Triage {
     protected static Paciente pacienteEnConsulta = null;
+    protected static int ids = 1;
 
     public static void registrarPaciente(Cola colaPacientes){
         Scanner scan = new Scanner(System.in);
         String nombre;
-        int ID;
         int gravedad;
 
         System.out.println(" >> [Sistema]: Registrar paciente. ");
@@ -18,7 +18,8 @@ public class Triage {
         nombre = scan.nextLine();
         System.out.print(" >> Gravedad (1-5): ");
         gravedad = scan.nextInt();
-        Paciente paciente = new Paciente(nombre, colaPacientes.size()+1, gravedad);
+        Paciente paciente = new Paciente(nombre, ids, gravedad);
+        ids++;
 
         colaPacientes.enqueue(paciente);
         System.out.println(" >> [Sistema]: Paciente " + nombre + " añadido a la cola.");
@@ -53,7 +54,7 @@ public class Triage {
                 colaAuxiliar.enqueue(colaPacientes.dequeue());
             }
 
-            colaPacientes.setCont(0);
+            ids -= numeroDePacientes;
 
             for (int i = 0; i < numeroDePacientes; i++){
                 colaPacientes.enqueue(colaAuxiliar.dequeue());
