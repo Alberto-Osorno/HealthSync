@@ -22,7 +22,6 @@ public class Cola implements Queue{
     @Override
     public Object dequeue() {
         if (lista.vacio()){
-            System.out.println("Cola vacía");
             return null;
         }
         else{
@@ -51,4 +50,11 @@ public class Cola implements Queue{
     public boolean isEmpty() {
         return lista.vacio();
     }
+
+    //Getters y Setters
+    public ListaSimple getLista() { return lista; }
+    public void setLista(ListaSimple lista) { this.lista = lista; }
+
+    public int getCont() { return cont; }
+    public void setCont(int cont) { this.cont = cont; }
 }

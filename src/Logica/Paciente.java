@@ -1,18 +1,25 @@
 package Logica;
 
+import Estructuras.Colas.Cola;
 import Estructuras.Listas.ListaSimple;
 
-public class Paciente {
+public class Paciente extends Cola {
     protected String nombre;
     protected int ID;
     protected int gravedad;
     protected ListaSimple expediente;
 
+    //Constructor
     public Paciente(String nombre, int ID, int gravedad){
         this.nombre  = nombre;
         this.ID = ID;
         this.gravedad = gravedad;
         expediente = new ListaSimple();
+    }
+
+    //Metodo
+    public String toString(){
+        return getNombre();
     }
 
     //Getters y Setters

@@ -5,6 +5,8 @@ import Estructuras.Pilas.Pila;
 
 import java.util.Scanner;
 
+import static Logica.Triage.pacienteEnConsulta;
+
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
@@ -15,6 +17,7 @@ public class Main {
         String modulo;
 
         do{
+            System.out.println();
             System.out.println("  HEALTHSYNC - SISTEMA HOSPITALARIO DE EMERGENCIAS  ");
             System.out.println("====================================================");
             System.out.println("[1] TRIAGE");
@@ -25,7 +28,6 @@ public class Main {
             System.out.println("[6] SALIR");
             System.out.print("\n> Seleccion: ");
             modulo = scan.nextLine();
-            System.out.println();
 
             switch (modulo){
                 case "1":
@@ -37,7 +39,7 @@ public class Main {
                     break;
 
                 case "3":
-                    Menus.expedientes();
+                    Menus.expedientes(pacienteEnConsulta);
                     break;
 
                 case "4":

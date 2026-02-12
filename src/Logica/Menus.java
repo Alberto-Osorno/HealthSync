@@ -10,16 +10,16 @@ public class Menus {
         Scanner scan = new Scanner(System.in);
         String opcion;
         do{
+            System.out.println();
             System.out.println("--- GESTIÓN DE TRIAJE ---");
-            System.out.println("Estado: " + colaPacientes.size() + " Pacientes esperando.\n");
+            System.out.println("Estado: " + colaPacientes.size() + " Pacientes esperando. \n");
             System.out.println("[1] Registrar llegada de paciente");
             System.out.println("[2] Llamar a consulta/valoración");
             System.out.println("[3] Ver quién es el siguiente en turno");
             System.out.println("[4] Listar todo los pacientes en espera");
             System.out.println("[5] Volver al Menú Principal");
-            System.out.print("\n> Seleccion: ");
+            System.out.print("\n> Selección: ");
             opcion = scan.nextLine();
-            System.out.println();
 
             switch (opcion) {
                 case "1":
@@ -27,22 +27,22 @@ public class Menus {
                     break;
 
                 case "2":
-                    //Aca va el metodo que se haga cargo de eso
+                    Triage.llamarAConsulta(colaPacientes);
                     break;
 
                 case "3":
-                    //Aca va el metodo que se haga cargo de eso
+                    Triage.verQuienSigue(colaPacientes);
                     break;
 
                 case "4":
-                    //Aca va el metodo que se haga cargo de eso
+                    Triage.pacientesEnEspera(colaPacientes);
                     break;
 
                 case "5":
                     break;
 
                 default:
-                    System.out.println("Opción invalida, intente de nuevo");
+                    System.out.println("Opción invalida, intente de nuevo\n");
             }
         }while (!opcion.equals("5"));
     }
@@ -51,6 +51,7 @@ public class Menus {
         Scanner scan = new Scanner(System.in);
         String opcion;
         do{
+            System.out.println();
             System.out.println("--- INVENTARIO DE FARMACIA ---");
             System.out.println("Aca hay que imprimir el size de las tres pilas" + "\n");
             System.out.println("[1] Abastecer medicamento");
@@ -58,8 +59,9 @@ public class Menus {
             System.out.println("[3] EXTRAER ESPECÍFICO");
             System.out.println("[4] Ver stock actual");
             System.out.println("[5] Volver al Menú Principal");
-
+            System.out.print("\n> Selección: ");
             opcion = scan.nextLine();
+
             switch (opcion) {
                 case "1":
                     //Aca va el metodo que se haga cargo de eso
@@ -86,7 +88,7 @@ public class Menus {
         }while (!opcion.equals("5"));
     }
 
-    public static void expedientes(){
+    public static void expedientes(Paciente pacienteEnConsulta){
         Scanner scan = new Scanner(System.in);
         String opcion;
         do{
@@ -124,6 +126,7 @@ public class Menus {
             }
         }while (!opcion.equals("5"));
     }
+
     public static void quirofanos(){
         Scanner scan = new Scanner(System.in);
         String opcion;
