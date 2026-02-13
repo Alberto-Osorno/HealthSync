@@ -1,13 +1,17 @@
 package Logica;
 
-import Estructuras.Colas.Cola;
 import Estructuras.Listas.ListaSimple;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Paciente{
     protected String nombre;
     protected int ID;
     protected int gravedad;
     protected ListaSimple expediente;
+    protected LocalDate fechaActual = LocalDate.now();
+    DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    protected String fechaDeRegistro;
 
     //Constructor
     public Paciente(String nombre, int ID, int gravedad){
@@ -15,6 +19,7 @@ public class Paciente{
         this.ID = ID;
         this.gravedad = gravedad;
         expediente = new ListaSimple();
+        fechaDeRegistro = fechaActual.format(formato);
     }
 
     //Metodo

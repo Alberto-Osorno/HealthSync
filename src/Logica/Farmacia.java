@@ -58,4 +58,24 @@ public class Farmacia {
         }
 
     }
+
+    public static void verStock(Pila pilaAnalgesicos, Pila pilaAntibioticos, Pila pilaSueros){
+        if (!pilaAnalgesicos.isEmpty()){
+            System.out.println(" >> [Sistema]: Pila Analgésicos: " + pilaAnalgesicos.top());
+        } else {
+            System.out.println(" >> [Sistema]: Pila Analgésicos está vacía");
+        }
+
+        if (!pilaAntibioticos.isEmpty()){
+            System.out.println(" >> [Sistema]: Pila Antibióticos: " + pilaAntibioticos.top());
+        } else {
+            System.out.println(" >> [Sistema]: Pila Antibióticos está vacía");
+        }
+
+        if (!pilaSueros.isEmpty()){
+            System.out.println(" >> [Sistema]: Pila Sueros: " + pilaSueros.top());
+        } else {
+            System.out.println(" >> [Sistema]: Pila Sueros está vacía");
+        }
+    }
 }

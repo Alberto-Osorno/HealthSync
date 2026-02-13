@@ -19,6 +19,11 @@ public class NodoDoble extends Nodo{
         this.anterior = anterior;
     }
 
+    @Override
+    public String toString(){
+        return dato.toString();
+    }
+
     //Getters y Setters
     public NodoDoble getSiguiente() { return siguiente; }
     public void setSiguiente(NodoDoble siguiente) { this.siguiente = siguiente; }

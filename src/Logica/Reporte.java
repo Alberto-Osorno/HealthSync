@@ -6,6 +6,7 @@ import Estructuras.Pilas.Pila;
 import java.util.Scanner;
 
 import static Logica.Expedientes.contadorDeDiagnosticosRegistrados;
+import static Logica.Quirofanos.etapaActual;
 
 public class Reporte {
     public static void imprimirDatos(Cola colaPacientes, Pila pilaAnalgesicos, Pila pilaAntibioticos, Pila pilaSueros){
@@ -34,7 +35,7 @@ public class Reporte {
         System.out.println();
         System.out.println("PACIENTES ACTIVOS:");
         System.out.println(" *Total de diagnósticos registrados hoy: " + contadorDeDiagnosticosRegistrados + ".");
-        System.out.println(" *Paciente #" + "Aca va el ID del paciente" + " en etapa: " + "Aca va la etapa" + ".");
+        System.out.println(" *Paciente #2004" + " en etapa: " + etapaActual + ".");
         System.out.println();
         System.out.println("Presione ENTER para continuar...");
         enter = scan.nextLine();

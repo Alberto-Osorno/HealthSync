@@ -52,7 +52,7 @@ public class Expedientes {
         if(diagnosticoEncontrado){
             Diagnostico auxiliar = (Diagnostico) actual.getDato();
             System.out.println(" >> [Sistema]: El diagnostico fue encontrado.");
-            System.out.println(" >> [Sistema]: El cargo del dianostico fue de $" + auxiliar.getPrecio());
+            System.out.println(" >> [Sistema]: El cargo del diagnostic fue de $" + auxiliar.getPrecio());
         } else {
             System.out.println(" >> [Sistema]: El diagnostico no fue encontrado.");
         }

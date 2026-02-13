@@ -1,6 +1,8 @@
 package Logica;
 
 import Estructuras.Colas.Cola;
+import Estructuras.Listas.ListaDoble;
+import Estructuras.Listas.NodoDoble;
 import Estructuras.Pilas.Pila;
 
 import java.util.Scanner;
@@ -22,27 +24,12 @@ public class Menus {
             opcion = scan.nextLine();
 
             switch (opcion) {
-                case "1":
-                    Triage.registrarPaciente(colaPacientes);
-                    break;
-
-                case "2":
-                    Triage.llamarAConsulta(colaPacientes);
-                    break;
-
-                case "3":
-                    Triage.verQuienSigue(colaPacientes);
-                    break;
-
-                case "4":
-                    Triage.pacientesEnEspera(colaPacientes);
-                    break;
-
-                case "5":
-                    break;
-
-                default:
-                    System.out.println("> [Sistema]: Opción invalida, intente de nuevo.");
+                case "1": Triage.registrarPaciente(colaPacientes); break;
+                case "2": Triage.llamarAConsulta(colaPacientes); break;
+                case "3": Triage.verQuienSigue(colaPacientes); break;
+                case "4": Triage.pacientesEnEspera(colaPacientes); break;
+                case "5": break;
+                default: System.out.println("> [Sistema]: Opción invalida, intente de nuevo.");
             }
         }while (!opcion.equals("5"));
     }
@@ -78,19 +65,11 @@ public class Menus {
                         pilaSeleccionada = scan.nextLine();
 
                         switch (pilaSeleccionada){
-                            case "1":
-                                Farmacia.abastecerPila(pilaAnalgesicos);
-                                break;
-                            case "2":
-                                Farmacia.abastecerPila(pilaAntibioticos);
-                                break;
-                            case "3":
-                                Farmacia.abastecerPila(pilaSueros);
-                                break;
-                            case "4":
-                                break;
-                            default:
-                                System.out.println(" >> [Sistema]: Opción invalida, intente de nuevo.");
+                            case "1": Farmacia.abastecerPila(pilaAnalgesicos); break;
+                            case "2": Farmacia.abastecerPila(pilaAntibioticos); break;
+                            case "3": Farmacia.abastecerPila(pilaSueros); break;
+                            case "4": break;
+                            default: System.out.println(" >> [Sistema]: Opción invalida, intente de nuevo.");
                         }
                     }while (!(pilaSeleccionada.equals("1") || pilaSeleccionada.equals("2") || pilaSeleccionada.equals("3")));
 
@@ -108,19 +87,11 @@ public class Menus {
                         pilaSeleccionada = scan.nextLine();
 
                         switch (pilaSeleccionada){
-                            case "1":
-                                Farmacia.despacharMedicamento(pilaAnalgesicos);
-                                break;
-                            case "2":
-                                Farmacia.despacharMedicamento(pilaAntibioticos);
-                                break;
-                            case "3":
-                                Farmacia.despacharMedicamento(pilaSueros);
-                                break;
-                            case "4":
-                                break;
-                            default:
-                                System.out.println(" >> [Sistema]: Opción invalida, intente de nuevo.");
+                            case "1": Farmacia.despacharMedicamento(pilaAnalgesicos); break;
+                            case "2": Farmacia.despacharMedicamento(pilaAntibioticos); break;
+                            case "3": Farmacia.despacharMedicamento(pilaSueros); break;
+                            case "4": break;
+                            default: System.out.println(" >> [Sistema]: Opción invalida, intente de nuevo.");
                         }
                     }while (!(pilaSeleccionada.equals("1") || pilaSeleccionada.equals("2") || pilaSeleccionada.equals("3")));
 
@@ -138,33 +109,19 @@ public class Menus {
                         pilaSeleccionada = scan.nextLine();
 
                         switch (pilaSeleccionada){
-                            case "1":
-                                Farmacia.extraerEspecifico(pilaAnalgesicos);
-                                break;
-                            case "2":
-                                Farmacia.extraerEspecifico(pilaAntibioticos);
-                                break;
-                            case "3":
-                                Farmacia.extraerEspecifico(pilaSueros);
-                                break;
-                            case "4":
-                                break;
-                            default:
-                                System.out.println(" >> [Sistema]: Opción invalida, intente de nuevo.");
+                            case "1": Farmacia.extraerEspecifico(pilaAnalgesicos); break;
+                            case "2": Farmacia.extraerEspecifico(pilaAntibioticos); break;
+                            case "3": Farmacia.extraerEspecifico(pilaSueros); break;
+                            case "4": break;
+                            default: System.out.println(" >> [Sistema]: Opción invalida, intente de nuevo.");
                         }
                     }while (!(pilaSeleccionada.equals("1") || pilaSeleccionada.equals("2") || pilaSeleccionada.equals("3")));
 
                     break;
 
-                case "4":
-                    //Aca va el metodo que se haga cargo de eso
-                    break;
-
-                case "5":
-                    break;
-
-                default:
-                    System.out.println("Opción invalida, intente de nuevo");
+                case "4": Farmacia.verStock(pilaAnalgesicos, pilaAntibioticos, pilaSueros); break;
+                case "5": break;
+                default: System.out.println("Opción invalida, intente de nuevo");
             }
         }while (!opcion.equals("5"));
     }
@@ -177,7 +134,7 @@ public class Menus {
             do{
                 System.out.println();
                 System.out.println("--- EXPEDIENTE MÉDICO: [ " +  pacienteEnConsulta.getNombre().toUpperCase() + " ] ---");
-                System.out.println("ID: #" + ID + " - Ingreso: " + "Aca va la fecha\n");
+                System.out.println("ID: #" + ID + " - Ingreso: " + pacienteEnConsulta.fechaDeRegistro +"\n");
                 System.out.println("[1] Agregar nuevo diagnóstico/síntoma");
                 System.out.println("[2] Buscar diagnostico en el historial");
                 System.out.println("[3] Calcular total de cargos médicos");
@@ -187,27 +144,12 @@ public class Menus {
                 opcion = scan.nextLine();
 
                 switch (opcion) {
-                    case "1":
-                        Expedientes.agregarDiagnostico(pacienteEnConsulta.getExpediente());
-                        break;
-
-                    case "2":
-                        Expedientes.buscarDiagnostico(pacienteEnConsulta.getExpediente());
-                        break;
-
-                    case "3":
-                        Expedientes.calcularTotal(pacienteEnConsulta.getExpediente());
-                        break;
-
-                    case "4":
-                        Expedientes.mostrarHistorial(pacienteEnConsulta.getExpediente());
-                        break;
-
-                    case "5":
-                        break;
-
-                    default:
-                        System.out.println("> [Sistema]: Opción invalida, intente de nuevo.");
+                    case "1": Expedientes.agregarDiagnostico(pacienteEnConsulta.getExpediente());break;
+                    case "2": Expedientes.buscarDiagnostico(pacienteEnConsulta.getExpediente());break;
+                    case "3": Expedientes.calcularTotal(pacienteEnConsulta.getExpediente());break;
+                    case "4": Expedientes.mostrarHistorial(pacienteEnConsulta.getExpediente());break;
+                    case "5": break;
+                    default: System.out.println("> [Sistema]: Opción invalida, intente de nuevo.");
                 }
             }while (!opcion.equals("5"));
         } else {
@@ -215,41 +157,41 @@ public class Menus {
         }
     }
 
-    public static void quirofanos(){
+    public static void quirofanos(ListaDoble etapasQuirofano){
         Scanner scan = new Scanner(System.in);
         String opcion;
         do{
+            System.out.println();
             System.out.println("--- FLUJO DE QUIRÓFANOS ---");
-            System.out.println("Ruta: [PREPARACIÓN] <-> [CIRUGÍA] <-> [RECUPERACIÓN] <-> [ALTA]\n");
+            System.out.print("Ruta: ");
+
+            NodoDoble actual = (NodoDoble) etapasQuirofano.getInicio();
+            while(actual != null){
+                if (actual != etapasQuirofano.getUltimo()){
+                    System.out.print("[" + actual.getDato() + "]<->");
+                } else {
+                    System.out.print("[" + actual.getDato() + "]");
+                }
+
+                actual = actual.getSiguiente();
+            }
+
+            System.out.println();
             System.out.println("[1] Avanzar paciente a siguiente etapa");
             System.out.println("[2] Retroceder paciente por complicación");
             System.out.println("[3] Insertar etapa de emergencia");
             System.out.println("[4] Ver ubicación actual del paciente");
             System.out.println("[5] Volver al Menú Principal");
-
+            System.out.print(" >> Selección: ");
             opcion = scan.nextLine();
+
             switch (opcion) {
-                case "1":
-                    //Aca va el metodo que se haga cargo de eso
-                    break;
-
-                case "2":
-                    //Aca va el metodo que se haga cargo de eso
-                    break;
-
-                case "3":
-                    //Aca va el metodo que se haga cargo de eso
-                    break;
-
-                case "4":
-                    //Aca va el metodo que se haga cargo de eso
-                    break;
-
-                case "5":
-                    break;
-
-                default:
-                    System.out.println("Opción invalida, intente de nuevo");
+                case "1": Quirofanos.avanzarPaciente(etapasQuirofano); break;
+                case "2": Quirofanos.retrocederPaciente(etapasQuirofano); break;
+                case "3": Quirofanos.insertarEtapa(etapasQuirofano); break;
+                case "4": Quirofanos.verUbicacion(); break;
+                case "5": break;
+                default: System.out.println("Opción invalida, intente de nuevo");
             }
         }while (!opcion.equals("5"));
     }

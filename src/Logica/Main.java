@@ -1,6 +1,7 @@
 package Logica;
 
 import Estructuras.Colas.Cola;
+import Estructuras.Listas.ListaDoble;
 import Estructuras.Pilas.Pila;
 
 import java.util.Scanner;
@@ -14,8 +15,10 @@ public class Main {
         Pila pilaAnalgesicos = new Pila();
         Pila pilaAntibioticos = new Pila();
         Pila pilaSueros = new Pila();
-        String modulo;
+        ListaDoble etapasQuirofano = new ListaDoble();
+        Quirofanos.establecerFlujoInicial(etapasQuirofano);
 
+        String modulo;
         do{
             System.out.println();
             System.out.println("  HEALTHSYNC - SISTEMA HOSPITALARIO DE EMERGENCIAS  ");
@@ -27,39 +30,18 @@ public class Main {
             System.out.println("[4] QUIRÓFANOS");
             System.out.println("[5] REPORTE DE ESTADO GLOBAL");
             System.out.println("[6] SALIR");
-            System.out.print("\n> Seleccion: ");
+            System.out.print("\n> Selección: ");
             modulo = scan.nextLine();
 
             switch (modulo){
-                case "1":
-                    Menus.triage(colaPacientes);
-                    break;
-
-                case "2":
-                    Menus.farmacia(pilaAnalgesicos, pilaAntibioticos, pilaSueros);
-                    break;
-
-                case "3":
-                    Menus.expedientes(pacienteEnConsulta);
-                    break;
-
-                case "4":
-                    Menus.quirofanos();
-                    break;
-
-                case "5":
-                    Reporte.imprimirDatos(colaPacientes, pilaAnalgesicos, pilaAntibioticos, pilaSueros);
-                    break;
-
-                case "6":
-                    System.out.println("SALIENDO...");
-                    break;
-
-                default:
-                    System.out.println("OPCIÓN INVALIDA, INTENTE DE NUEVO\n");
+                case "1": Menus.triage(colaPacientes); break;
+                case "2": Menus.farmacia(pilaAnalgesicos, pilaAntibioticos, pilaSueros); break;
+                case "3": Menus.expedientes(pacienteEnConsulta); break;
+                case "4": Menus.quirofanos(etapasQuirofano); break;
+                case "5": Reporte.imprimirDatos(colaPacientes, pilaAnalgesicos, pilaAntibioticos, pilaSueros); break;
+                case "6": System.out.println("SALIENDO..."); break;
+                default: System.out.println("OPCIÓN INVALIDA, INTENTE DE NUEVO");
             }
-
         } while(!modulo.equals("6"));
     }
-
 }

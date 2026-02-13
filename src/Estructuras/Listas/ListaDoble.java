@@ -1,12 +1,12 @@
 package Estructuras.Listas;
 
-public class ListaDoble extends ListaD{
+public class ListaDoble extends ListaD {
     @Override
     public void insertarInicio(Object dato) {
-        if (vacio())
+        if (vacio()) {
             inicio = ultimo = new NodoDoble(dato);
-        else{
-            NodoDoble nuevo = new NodoDoble(dato,inicio,null);
+        } else {
+            NodoDoble nuevo = new NodoDoble(dato, inicio, null);
             inicio.setAnterior(nuevo);
             inicio = nuevo;
         }
@@ -14,11 +14,10 @@ public class ListaDoble extends ListaD{
 
     @Override
     public void insertarFinal(Object dato) {
-        if (vacio()){
+        if (vacio()) {
             inicio = ultimo = new NodoDoble(dato);
-        }
-        else{
-            NodoDoble nuevo = new NodoDoble(dato,null,ultimo);
+        } else {
+            NodoDoble nuevo = new NodoDoble(dato, null, ultimo);
             ultimo.setSiguiente(nuevo);
             ultimo = nuevo;
         }
@@ -27,14 +26,12 @@ public class ListaDoble extends ListaD{
     @Override
     public Object eliminarInicio() {
         Object eliminado = null;
-        if (vacio())
+        if (vacio()) {
             System.out.println("La lista está vacía");
-        else
-        if (inicio == ultimo){
+        } else if (inicio == ultimo) {
             eliminado = inicio.getDato();
             inicio = ultimo = null;
-        }
-        else{
+        } else {
             eliminado = inicio.getDato();
             inicio = inicio.getSiguiente();
             inicio.setAnterior(null);
@@ -45,14 +42,12 @@ public class ListaDoble extends ListaD{
     @Override
     public Object eliminarFinal() {
         Object eliminado = null;
-        if (vacio())
+        if (vacio()) {
             System.out.println("La lista está vacía");
-        else
-        if (inicio == ultimo){
+        } else if (inicio == ultimo) {
             eliminado = ultimo.getDato();
             inicio = ultimo = null;
-        }
-        else{
+        } else {
             eliminado = ultimo.getDato();
             ultimo = ultimo.getAnterior();
             ultimo.setSiguiente(null);
