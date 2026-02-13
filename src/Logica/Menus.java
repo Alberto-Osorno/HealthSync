@@ -153,7 +153,7 @@ public class Menus {
                 }
             }while (!opcion.equals("5"));
         } else {
-            System.out.println("> [Sistema]: No hay ningún paciente en consulta.");
+            System.out.println(" >> [Sistema]: No hay ningún paciente en consulta.");
         }
     }
 
@@ -177,12 +177,14 @@ public class Menus {
             }
 
             System.out.println();
+            System.out.println();
             System.out.println("[1] Avanzar paciente a siguiente etapa");
             System.out.println("[2] Retroceder paciente por complicación");
             System.out.println("[3] Insertar etapa de emergencia");
             System.out.println("[4] Ver ubicación actual del paciente");
             System.out.println("[5] Volver al Menú Principal");
-            System.out.print(" >> Selección: ");
+            System.out.println();
+            System.out.print("> Selección: ");
             opcion = scan.nextLine();
 
             switch (opcion) {

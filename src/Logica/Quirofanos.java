@@ -16,33 +16,41 @@ public class Quirofanos {
     }
 
     public static void avanzarPaciente(ListaDoble etapasQuirofano){
-        NodoDoble actual = (NodoDoble) etapasQuirofano.getInicio();
+        if (etapaActual != etapasQuirofano.getUltimo()){
+            NodoDoble actual = (NodoDoble) etapasQuirofano.getInicio();
 
-        while (actual != null){
-            if (actual == etapaActual){
-                etapaActual = actual.getSiguiente();
-                break;
+            while (actual != null){
+                if (actual == etapaActual){
+                    etapaActual = actual.getSiguiente();
+                    break;
+                }
+                actual = actual.getSiguiente();
             }
-            actual = actual.getSiguiente();
-        }
 
-        System.out.println(" >> [Sistema]: El paciente ha sido avanzado de \"" + actual + "\" a \"" + etapaActual + "\".");
-        System.out.println(" >> [Sistema]: Apuntadores actualizados, Prev (" + etapaActual.getAnterior() + "), Next (" + etapaActual.getSiguiente() + ").");
+            System.out.println(" >> [Sistema]: El paciente ha sido avanzado de \"" + actual + "\" a \"" + etapaActual + "\".");
+            System.out.println(" >> [Sistema]: Apuntadores actualizados, Prev (" + etapaActual.getAnterior() + "), Next (" + etapaActual.getSiguiente() + ").");
+        } else {
+            System.out.println(" >> [Sistema]: El paciente se encuentra en la ultima etapa.");
+        }
     }
 
     public static void retrocederPaciente(ListaDoble etapasQuirofano){
-        NodoDoble actual = (NodoDoble) etapasQuirofano.getInicio();
+        if (etapaActual != etapasQuirofano.getInicio()){
+            NodoDoble actual = (NodoDoble) etapasQuirofano.getInicio();
 
-        while (actual != null){
-            if (actual == etapaActual){
-                etapaActual = actual.getAnterior();
-                break;
+            while (actual != null){
+                if (actual == etapaActual){
+                    etapaActual = actual.getAnterior();
+                    break;
+                }
+                actual = actual.getSiguiente();
             }
-            actual = actual.getSiguiente();
-        }
 
-        System.out.println(" >> [Sistema]: El paciente ha sido devuelto de \"" + actual + "\" a \"" + etapaActual + "\".");
-        System.out.println(" >> [Sistema]: Apuntadores actualizados, Prev (" + etapaActual.getAnterior() + "), Next (" + etapaActual.getSiguiente() + ").");
+            System.out.println(" >> [Sistema]: El paciente ha sido devuelto de \"" + actual + "\" a \"" + etapaActual + "\".");
+            System.out.println(" >> [Sistema]: Apuntadores actualizados, Prev (" + etapaActual.getAnterior() + "), Next (" + etapaActual.getSiguiente() + ").");
+        } else {
+            System.out.println(" >> [Sistema]: El paciente se encuentra en la primera etapa.");
+        }
     }
 
     public static void insertarEtapa(ListaDoble etapasQuirofano){

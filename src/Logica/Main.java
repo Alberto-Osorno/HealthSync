@@ -30,7 +30,8 @@ public class Main {
             System.out.println("[4] QUIRÓFANOS");
             System.out.println("[5] REPORTE DE ESTADO GLOBAL");
             System.out.println("[6] SALIR");
-            System.out.print("\n> Selección: ");
+            System.out.println();
+            System.out.print("> Selección: ");
             modulo = scan.nextLine();
 
             switch (modulo){
