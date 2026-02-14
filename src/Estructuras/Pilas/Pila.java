@@ -12,12 +12,14 @@ public class Pila implements Stack{
         cont = 0;
     }
 
+    // Inserta un elemento en la pila
     @Override
     public void push(Object dato) {
         lista.insertarInicio(dato);
         cont++;
     }
 
+    // Elimina el elemento superior de la pila
     @Override
     public Object pop() {
         if (lista.vacio()){
@@ -28,6 +30,7 @@ public class Pila implements Stack{
         }
     }
 
+    // Devuelve el elemento superior sin eliminarlo
     @Override
     public Object top() {
         if (lista.vacio()){
@@ -38,11 +41,13 @@ public class Pila implements Stack{
         }
     }
 
+    // Devuelve la cantidad de elementos en la pila
     @Override
     public int size() {
         return cont;
     }
-
+    
+    // Verifica si la pila está vacía
     @Override
     public boolean isEmpty() {
         return lista.vacio();
