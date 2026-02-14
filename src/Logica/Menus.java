@@ -7,7 +7,17 @@ import Estructuras.Pilas.Pila;
 
 import java.util.Scanner;
 
+/**
+ * Propósito: administrar los menús del sistema y dirigir
+ * al usuario a las diferentes funcionalidades del hospital.
+ */
 public class Menus {
+
+    /**
+     * Propósito: mostrar y gestionar el menú de triaje.
+     * Entrada: cola de pacientes en espera.
+     * Salida: ninguna.
+     */
     public static void triage(Cola colaPacientes){
         Scanner scan = new Scanner(System.in);
         String opcion;
@@ -34,6 +44,11 @@ public class Menus {
         }while (!opcion.equals("5"));
     }
 
+    /**
+     * Propósito: mostrar y gestionar el inventario de farmacia.
+     * Entrada: pilas de medicamentos disponibles.
+     * Salida: ninguna.
+     */
     public static void farmacia(Pila pilaAnalgesicos, Pila pilaAntibioticos, Pila pilaSueros){
         Scanner scan = new Scanner(System.in);
         String opcion;
@@ -126,6 +141,11 @@ public class Menus {
         }while (!opcion.equals("5"));
     }
 
+    /**
+     * Propósito: gestionar el expediente médico del paciente en consulta.
+     * Entrada: paciente actualmente en consulta.
+     * Salida: ninguna.
+     */
     public static void expedientes(Paciente pacienteEnConsulta){
         if (pacienteEnConsulta != null){
             Scanner scan = new Scanner(System.in);
@@ -157,6 +177,11 @@ public class Menus {
         }
     }
 
+    /**
+     * Propósito: gestionar el flujo de pacientes dentro del quirófano.
+     * Entrada: lista doble con etapas del quirófano.
+     * Salida: ninguna.
+     */
     public static void quirofanos(ListaDoble etapasQuirofano){
         Scanner scan = new Scanner(System.in);
         String opcion;
