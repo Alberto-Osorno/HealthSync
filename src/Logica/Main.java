@@ -8,7 +8,17 @@ import java.util.Scanner;
 
 import static Logica.Triage.pacienteEnConsulta;
 
+/**
+ * Propósito: iniciar y controlar la ejecución principal
+ * del sistema hospitalario HealthSync.
+ */
 public class Main {
+
+    /**
+     * Propósito: ejecutar el programa y mostrar el menú principal del sistema.
+     * Entrada: argumentos enviados al iniciar el programa.
+     * Salida: ejecución del sistema hospitalario en consola.
+     */
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         Cola colaPacientes = new Cola();
