@@ -1,3 +1,8 @@
+/**
+ * Interfaz Stack.
+ * Define las operaciones básicas de una pila.
+ */
+
 package Estructuras.Pilas;
 
 public interface Stack {
