@@ -1,3 +1,10 @@
+/**
+ * Clase Pila.
+ * Implementa una estructura LIFO (último en entrar, primero en salir).
+ */
+
+
+
 package Estructuras.Pilas;
 
 import Estructuras.Listas.ListaSimple;
