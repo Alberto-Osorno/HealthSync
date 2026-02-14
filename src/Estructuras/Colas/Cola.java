@@ -1,3 +1,9 @@
+/**
+ * Clase Cola
+ * Implementa una estructura de datos tipo cola (FIFO).
+ * El primer elemento en entrar es el primero en salir.
+ */
+
 package Estructuras.Colas;
 
 import Estructuras.Listas.ListaSimple;
@@ -13,12 +19,15 @@ public class Cola implements Queue{
     }
 
     //Metodos
+
+    // Inserta un elemento al final de la cola
     @Override
     public void enqueue(Object dato) {
         lista.insertarFinal(dato);
         cont++;
     }
 
+    // Elimina y devuelve el primer elemento de la cola
     @Override
     public Object dequeue() {
         if (lista.vacio()){
@@ -29,12 +38,14 @@ public class Cola implements Queue{
             return lista.eliminarInicio();
         }
     }
-
+    
+    // Devuelve el número de elementos en la cola
     @Override
     public int size() {
         return cont;
     }
-
+    
+    // Obtiene el primer elemento sin eliminarlo
     @Override
     public Object front() {
         if (lista.vacio()){
@@ -46,6 +57,7 @@ public class Cola implements Queue{
         }
     }
 
+    // Verifica si la cola está vacía
     @Override
     public boolean isEmpty() {
         return lista.vacio();
