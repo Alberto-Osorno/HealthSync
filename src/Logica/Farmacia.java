@@ -4,7 +4,17 @@ import Estructuras.Pilas.Pila;
 
 import java.util.Scanner;
 
+/**
+ * Propósito: gestionar el almacenamiento y despacho de medicamentos
+ * utilizando pilas dentro del sistema hospitalario.
+ */
 public class Farmacia {
+
+    /**
+     * Propósito: agregar un medicamento a la pila de inventario.
+     * Entrada: pila donde se almacenará el medicamento.
+     * Salida: ninguna.
+     */
     public static void abastecerPila(Pila pila){
         Scanner scan = new Scanner(System.in);
         String medicamento;
@@ -15,6 +25,11 @@ public class Farmacia {
         pila.push(medicamento);
     }
 
+    /**
+     * Propósito: despachar el medicamento que está en la parte superior de la pila.
+     * Entrada: pila de medicamentos.
+     * Salida: medicamento despachado mostrado en pantalla.
+     */
     public static void despacharMedicamento(Pila pila){
         if (!pila.isEmpty()){
             System.out.println(" >> [Sistema]: Despachando: " + pila.pop());
@@ -23,6 +38,11 @@ public class Farmacia {
         }
     }
 
+    /**
+     * Propósito: buscar y despachar un medicamento específico dentro de la pila.
+     * Entrada: pila de medicamentos.
+     * Salida: mensaje indicando si el medicamento fue encontrado y despachado.
+     */
     public static void extraerEspecifico(Pila pila){
         Scanner scan = new Scanner(System.in);
         Pila pilaAuxiliar = new Pila();
@@ -59,6 +79,12 @@ public class Farmacia {
 
     }
 
+    /**
+     * Propósito: mostrar el medicamento disponible en la parte superior
+     * de cada pila de inventario.
+     * Entrada: pilas de analgésicos, antibióticos y sueros.
+     * Salida: información del medicamento disponible en cada pila.
+     */
     public static void verStock(Pila pilaAnalgesicos, Pila pilaAntibioticos, Pila pilaSueros){
         if (!pilaAnalgesicos.isEmpty()){
             System.out.println(" >> [Sistema]: Pila Analgésicos: " + pilaAnalgesicos.top());
@@ -79,3 +105,4 @@ public class Farmacia {
         }
     }
 }
+
