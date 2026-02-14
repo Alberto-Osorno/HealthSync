@@ -1,3 +1,8 @@
+/**
+ * Clase abstracta para listas doblemente enlazadas.
+ */
+
+
 package Estructuras.Listas;
 
 public abstract class ListaD extends Lista {
@@ -5,10 +10,13 @@ public abstract class ListaD extends Lista {
     protected NodoDoble ultimo;
 
     //Metodos
+
+    // Verifica si la lista está vacía
     public boolean vacio() {
         return inicio == null;
     }
 
+    // Imprime la lista de inicio a fin
     public void imprimir() {
         NodoDoble actual = inicio;
         while (actual != null) {
@@ -22,6 +30,7 @@ public abstract class ListaD extends Lista {
         System.out.println();
     }
 
+    // Imprime la lista en orden inverso
     public void imprimirAlReves() {
         NodoDoble actual = ultimo;
         while (actual != null) {
