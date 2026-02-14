@@ -8,7 +8,18 @@ import java.util.Scanner;
 import static Logica.Expedientes.contadorDeDiagnosticosRegistrados;
 import static Logica.Quirofanos.etapaActual;
 
+/**
+ * Propósito: generar y mostrar un reporte general del estado
+ * actual del sistema hospitalario.
+ */
 public class Reporte {
+
+    /**
+     * Propósito: imprimir en pantalla el estado de triaje,
+     * farmacia y pacientes activos del hospital.
+     * Entrada: cola de pacientes y pilas de medicamentos disponibles.
+     * Salida: reporte mostrado en pantalla.
+     */
     public static void imprimirDatos(Cola colaPacientes, Pila pilaAnalgesicos, Pila pilaAntibioticos, Pila pilaSueros){
         Scanner scan = new Scanner(System.in);
         String enter;
