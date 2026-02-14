@@ -7,9 +7,18 @@ import java.util.Scanner;
 
 import static Logica.Triage.pacienteEnConsulta;
 
+/**
+ * Propósito: administrar el historial médico y diagnósticos
+ * de los pacientes dentro del sistema hospitalario.
+ */
 public class Expedientes {
     protected static int contadorDeDiagnosticosRegistrados = 0;
 
+    /**
+     * Propósito: agregar un nuevo diagnóstico al expediente del paciente.
+     * Entrada: lista que representa el expediente del paciente.
+     * Salida: diagnóstico agregado al expediente.
+     */
     public static void agregarDiagnostico(ListaSimple expediente){
         Scanner scan = new Scanner(System.in);
         String descripcion;
@@ -28,6 +37,11 @@ public class Expedientes {
         System.out.println(" >> [Sistema]: Nodo de historial enlazado correctamente.");
     }
 
+    /**
+     * Propósito: buscar un diagnóstico dentro del expediente.
+     * Entrada: lista del expediente del paciente.
+     * Salida: información del diagnóstico encontrado o mensaje de no encontrado.
+     */
     public static void buscarDiagnostico(ListaSimple expediente){
         Scanner scan = new Scanner(System.in);
         String diagnosticoBuscado;
@@ -58,6 +72,11 @@ public class Expedientes {
         }
     }
 
+    /**
+     * Propósito: calcular el total de cargos registrados en el expediente.
+     * Entrada: lista del expediente del paciente.
+     * Salida: monto total mostrado en pantalla.
+     */
     public static void calcularTotal(ListaSimple expediente){
         float cargoTotal = 0;
         Nodo actual = expediente.getInicio();
@@ -71,6 +90,11 @@ public class Expedientes {
         System.out.println(" >> [Sistema] Cargo total: $" + cargoTotal);
     }
 
+    /**
+     * Propósito: mostrar el historial completo de diagnósticos del paciente.
+     * Entrada: lista del expediente del paciente.
+     * Salida: historial mostrado en pantalla.
+     */
     public static void mostrarHistorial(ListaSimple expediente){
         if (!expediente.vacio()){
             Nodo actual = expediente.getInicio();
