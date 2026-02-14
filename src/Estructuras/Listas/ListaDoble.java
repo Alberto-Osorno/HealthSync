@@ -1,6 +1,14 @@
+/**
+ * Implementación de una lista doblemente enlazada.
+ */
+
+
+
 package Estructuras.Listas;
 
 public class ListaDoble extends ListaD {
+    
+    // Inserta un elemento al inicio
     @Override
     public void insertarInicio(Object dato) {
         if (vacio()) {
@@ -12,6 +20,7 @@ public class ListaDoble extends ListaD {
         }
     }
 
+    // Inserta un elemento al final
     @Override
     public void insertarFinal(Object dato) {
         if (vacio()) {
@@ -23,6 +32,7 @@ public class ListaDoble extends ListaD {
         }
     }
 
+    // Elimina el primer elemento
     @Override
     public Object eliminarInicio() {
         Object eliminado = null;
@@ -39,6 +49,7 @@ public class ListaDoble extends ListaD {
         return eliminado;
     }
 
+    // Elimina el último elemento
     @Override
     public Object eliminarFinal() {
         Object eliminado = null;
