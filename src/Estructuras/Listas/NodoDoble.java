@@ -1,3 +1,8 @@
+/**
+ * Nodo para lista doblemente enlazada,
+ * contiene referencias al nodo siguiente y anterior.
+ */
+
 package Estructuras.Listas;
 
 public class NodoDoble extends Nodo{
@@ -25,9 +30,14 @@ public class NodoDoble extends Nodo{
     }
 
     //Getters y Setters
+
+    // Devuelve el nodo siguiente
     public NodoDoble getSiguiente() { return siguiente; }
+    // Establece el nodo siguiente
     public void setSiguiente(NodoDoble siguiente) { this.siguiente = siguiente; }
 
+    // Devuelve el nodo anterior
     public NodoDoble getAnterior() { return anterior; }
+    // Establece el nodo anterior
     public void setAnterior(NodoDoble anterior) { this.anterior = anterior; }
 }
