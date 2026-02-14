@@ -1,3 +1,9 @@
+/**
+ * Interfaz Queue.
+ * Define las operaciones básicas de una cola.
+ */
+
+
 package Estructuras.Colas;
 
 public interface Queue {
