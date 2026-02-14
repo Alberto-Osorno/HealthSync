@@ -1,6 +1,13 @@
+/**
+ * Implementación de una lista simplemente enlazada.
+ */
+
+
 package Estructuras.Listas;
 
 public class ListaSimple extends Lista{
+
+    // Inserta un elemento al inicio
     @Override
     public void insertarInicio(Object dato) {
         if (vacio())
@@ -9,6 +16,7 @@ public class ListaSimple extends Lista{
             inicio = new Nodo(dato,inicio);
     }
 
+    // Inserta un elemento al final
     @Override
     public void insertarFinal(Object dato) {
         if (vacio()){
@@ -21,6 +29,7 @@ public class ListaSimple extends Lista{
         }
     }
 
+    // Elimina el primer elemento
     @Override
     public Object eliminarInicio() {
         Object eliminado=null;
@@ -39,6 +48,7 @@ public class ListaSimple extends Lista{
         return eliminado;
     }
 
+    // Elimina el último elemento
     @Override
     public Object eliminarFinal() {
         Object eliminado = null;
