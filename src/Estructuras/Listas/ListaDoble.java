@@ -1,13 +1,16 @@
-/**
- * Implementación de una lista doblemente enlazada.
- */
-
-
-
 package Estructuras.Listas;
 
+/**
+ * Propósito: implementar una lista doblemente enlazada que permite
+ * insertar y eliminar elementos tanto al inicio como al final.
+ */
 public class ListaDoble extends ListaD {
     
+    /**
+     * Propósito: insertar un elemento al inicio de la lista doble.
+     * Entrada: dato a insertar.
+     * Salida: ninguna.
+     */
     // Inserta un elemento al inicio
     @Override
     public void insertarInicio(Object dato) {
@@ -20,6 +23,11 @@ public class ListaDoble extends ListaD {
         }
     }
 
+    /**
+     * Propósito: insertar un elemento al final de la lista doble.
+     * Entrada: dato a insertar.
+     * Salida: ninguna.
+     */
     // Inserta un elemento al final
     @Override
     public void insertarFinal(Object dato) {
@@ -32,6 +40,11 @@ public class ListaDoble extends ListaD {
         }
     }
 
+    /**
+     * Propósito: eliminar el primer elemento de la lista doble.
+     * Entrada: ninguna.
+     * Salida: dato eliminado o null si la lista está vacía.
+     */
     // Elimina el primer elemento
     @Override
     public Object eliminarInicio() {
@@ -49,6 +62,11 @@ public class ListaDoble extends ListaD {
         return eliminado;
     }
 
+    /**
+     * Propósito: eliminar el último elemento de la lista doble.
+     * Entrada: ninguna.
+     * Salida: dato eliminado o null si la lista está vacía.
+     */
     // Elimina el último elemento
     @Override
     public Object eliminarFinal() {
@@ -66,3 +84,4 @@ public class ListaDoble extends ListaD {
         return eliminado;
     }
 }
+
