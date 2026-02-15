@@ -1,12 +1,16 @@
-/**
- * Implementación de una lista simplemente enlazada.
- */
-
-
 package Estructuras.Listas;
 
+/**
+ * Propósito: implementar una lista simplemente enlazada que permite
+ * insertar y eliminar elementos al inicio y al final.
+ */
 public class ListaSimple extends Lista{
 
+    /**
+     * Propósito: insertar un elemento al inicio de la lista.
+     * Entrada: dato a insertar.
+     * Salida: ninguna.
+     */
     // Inserta un elemento al inicio
     @Override
     public void insertarInicio(Object dato) {
@@ -16,6 +20,11 @@ public class ListaSimple extends Lista{
             inicio = new Nodo(dato,inicio);
     }
 
+    /**
+     * Propósito: insertar un elemento al final de la lista.
+     * Entrada: dato a insertar.
+     * Salida: ninguna.
+     */
     // Inserta un elemento al final
     @Override
     public void insertarFinal(Object dato) {
@@ -29,6 +38,11 @@ public class ListaSimple extends Lista{
         }
     }
 
+    /**
+     * Propósito: eliminar el primer elemento de la lista.
+     * Entrada: ninguna.
+     * Salida: dato eliminado o null si la lista está vacía.
+     */
     // Elimina el primer elemento
     @Override
     public Object eliminarInicio() {
@@ -48,6 +62,11 @@ public class ListaSimple extends Lista{
         return eliminado;
     }
 
+    /**
+     * Propósito: eliminar el último elemento de la lista.
+     * Entrada: ninguna.
+     * Salida: dato eliminado o null si la lista está vacía.
+     */
     // Elimina el último elemento
     @Override
     public Object eliminarFinal() {
